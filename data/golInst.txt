@@ -1,0 +1,23 @@
+************************************************************************
+             An interactive* version of Conway's Game of Life
+ 
+                             The Game of Life Rules: 
+------------------------------------------------------------
+ 1. A cell dies if it has fewer than 2 or more than 3 neighbors
+ 2. A cell stays alive if it has 2 or 3 neighbors
+ 3. A cell is born if it has exactly 3 neighbors (and isn't already alive)
+------------------------------------------------------------
+
+ >>>>>Click a cell to change its status (and pause the game).<<<<<
+ 
+::::::::::::::::::::::::::::::::::::::::::::::::Menu::::::::::::::::::::::::::::::::::::::::::::::::::::::
+      S: Start/Pause                            D: Save World
+      L: Load Saved World                   Y: Make Color Yellow
+      X: Choose Random Color           M: Show this menu
+      <- (Left Arrow): Slow Down       -> (Right Arrow): Speed Up
+            Number Keys (1-9): Load specific starting world
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+      Stan Golanka (2018) w/ Neighbor Detection by Dan Rencricca
+ ***********************************************************************
+ *Is there any other kind?
