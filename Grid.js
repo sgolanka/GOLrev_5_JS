@@ -154,11 +154,11 @@ class Grid {
      var whichWorld = w;
      var worldTable = new p5.Table();
      if(whichWorld == 0) {
-       worldTable = loadTable("data/tableGOL.csv");
+        worldTable = loadTable("data/tableGOL.csv");
      } else {
-       var nameOfTable = "data/tableGOV" + whichWorld + ".csv";
+       var nameOfTable = "data/tableGOL" + whichWorld + ".csv";
        console.log(nameOfTable);
-       worldTable = loadTable("nameOfTable");
+       worldTable = loadTable(nameOfTable);
      }
 
      var colCount = worldTable.getColumnCount();

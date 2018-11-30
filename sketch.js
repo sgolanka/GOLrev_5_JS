@@ -78,7 +78,7 @@ function displayInstructions() {
   textSize(width / 35);
   fill(255, 255, 0, 200);
   var instructions = "";
-  var instText = loadStrings("golInst.txt");
+  var instText = loadStrings("data/golInst.txt");
   for(var i = 0; i < instText.length; i++) {
     instructions += instText[i] + "\n";
   }
