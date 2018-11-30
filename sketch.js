@@ -33,6 +33,11 @@
  var timeBetweenGenerations, numberOfGenerations;
  var start, preStart;
  var smoothener;
+ var instText;
+
+function preload() {
+  instText = loadStrings("data/golInst.txt");
+}
 
 function setup() {
   preStart = true;
@@ -42,7 +47,7 @@ function setup() {
   smoothener = new Timer(80);
   smoothener.start(); // smoothener makes MouseDragged work a little better
 
-  createCanvas(700, 700);
+  createCanvas(window.innerWidth, window.innerHeight);
 
   // Grid creates the cells and runs the game
   universe = new Grid(width / 10, height / 10, width, height);
@@ -75,14 +80,12 @@ function draw() {
 }
 
 function displayInstructions() {
-  textSize(width / 35);
-  fill(255, 255, 0, 200);
-  var instructions = "";
-  var instText = loadStrings("data/golInst.txt");
-  for(var i = 0; i < instText.length; i++) {
-    instructions += instText[i] + "\n";
-  }
-  text(instructions, 0, 0, width, height);
+    for(var i = 0; i < instText.length; i++) {
+      textSize(height / 35);
+      textAlign(CENTER);
+      fill(255, 255, 0, 200);
+      text(instText[i], 0, i * (height / 35), width, height / 35);
+    }
 }
 
 function mousePressed() {
@@ -145,7 +148,7 @@ function keyPressed() {
     start = false;
     universe.loadWorld(5);
     numberOfGenerations = 0;
-  } else if (key == CODED) {
+  } else if (key == keyCode) {
     textSize(20);
     fill(255, 255, 0);
     text("TBG: " + timeBetweenGenerations, 10, 30);
