@@ -82,7 +82,6 @@ function draw() {
 function displayInstructions() {
     for(var i = 0; i < instText.length; i++) {
       textSize(height / 35);
-      textAlign(CENTER);
       fill(255, 255, 0, 200);
       text(instText[i], 0, i * (height / 35), width, height / 35);
     }
