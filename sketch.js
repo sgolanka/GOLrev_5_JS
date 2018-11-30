@@ -80,12 +80,13 @@ function draw() {
 }
 
 function displayInstructions() {
+  var instructions = ""
     for(var i = 0; i < instText.length; i++) {
-      textSize(height / 50);
-      textAlign(CENTER);
-      fill(255, 255, 0, 200);
-      text(instText[i], 0, i * (height / 35), width, height / 35);
+      instructions += instText[i] + "\n"
     }
+    textSize(height / 35);
+    fill(255, 255, 0, 200);
+    text(instructions, 0, 0, width, height);
 }
 
 function mousePressed() {
