@@ -1,3 +1,5 @@
+// BUG: universe.world = undefined;
+
 /*
 *************************************************************************
  *************************************************************************
@@ -47,10 +49,11 @@ function setup() {
   smoothener = new Timer(80);
   smoothener.start(); // smoothener makes MouseDragged work a little better
 
-  createCanvas(window.innerWidth, window.innerHeight);
+  createCanvas(700, 700);
 
   // Grid creates the cells and runs the game
   universe = new Grid(width / 10, height / 10, width, height);
+
   // in milliseconds - lower number is faster:
   timeBetweenGenerations = 180;
   // set the timer to seperate the generations
@@ -60,7 +63,7 @@ function setup() {
 
 function draw() {
   background(0);
-
+  console.log(universe.world);
   if(preStart) {
     displayInstructions();
   } else {
@@ -86,7 +89,8 @@ function displayInstructions() {
     }
     textSize(height / 35);
     fill(255, 255, 0, 200);
-    text(instructions, 0, 0, width, height);
+    text(instructions, 50, 50, width - 50, height - 50);
+
 }
 
 function mousePressed() {
