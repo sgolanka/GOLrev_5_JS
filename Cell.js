@@ -1,6 +1,6 @@
 class Cell {
 
-  constructer(w, h, s) {
+  constructor(w, h, s) {
     this.cellW = w;
     this.cellH = h;
     this.on = false; // this is the only thing that matters for the "nextWorld" array
@@ -48,7 +48,7 @@ class Cell {
   }
 
   inCell(x, y) {
-    return x >= cellX && (x <= cellX + cellW) && y >= cellY && (y <= cellY + cellH);
+    return x >= this.cellX && (x <= this.cellX + this.cellW) && y >= this.cellY && (y <= this.cellY + this.cellH);
   }
 
   name() {

@@ -1,13 +1,15 @@
 class Grid {
 
-  constructer(c, r, w, h) {
+  constructor(c, r, w, h) {
     this.col = 2 * c;
     this.row = 2 * r;
-    this.world = new Cell[this.row][this.col]; // current state as 2D grid of Cells
     this.onColor = color(255);
+    this.world = new Array(this.col); // current state as 2D grid of Cells
+    for(var i = 0; i < this.world.length; i++) {
+      this.world[i] = new Array(this.row);
+    }
     var cw = float(2 * w / this.world.length);
     var ch = float(2 * h / this.world[0].length);
-
     for(var i = 0; i < this.world.length; i++) {
       for(var j = 0; j < this.world[i].length; j++) {
         this.world[i][j] = new Cell(float(cw), ch, (nf(i, 3) + nf(j, 3)));
@@ -16,7 +18,7 @@ class Grid {
       }
     }
 
-    this.nextWorld = new Cell[this.world.length][this.world[0].length]; // next generation state--just needs to keep track of value of "on"
+    this.nextWorld = new Array(new Array(this.world.length), new Array(this.world[0].length)); // next generation state--just needs to keep track of value of "on"
 
     // nextworld initialized like world; fewer details necessary
     for(var i = 0; i < this.nextWorld.length; i++) {
