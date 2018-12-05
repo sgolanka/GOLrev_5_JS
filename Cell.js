@@ -5,11 +5,11 @@ class Cell {
     this.cellH = h;
     this.on = false; // this is the only thing that matters for the "nextWorld" array
     this.id = s; // assumed to be in format cccrrr (e.g. 033007 for c = 33 r = 7)
-    this.r = parseInt(id.substring(0, 3));
-    this.c = parseInt(id.substring(3));
+    this.r = parseInt(this.id.substring(0, 3));
+    this.c = parseInt(this.id.substring(3));
     // yeah sorry
     this.elbow = color(255);
-    this.cellColor = elbow;
+    this.cellColor = this.elbow;
     this.outlineColor = color(0);
   }
 

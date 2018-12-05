@@ -165,7 +165,7 @@ class Grid {
 
      var colCount = worldTable.getColumnCount();
      var rowCount = worldTable.getRowCount();
-
+     
      for(var a = 0; a < rowCount; a++) { // go through rows
        for(var b = 0; b < colCount; b++) { // go through columns
          if(worldTable.getInt(a, b) == 1) {
