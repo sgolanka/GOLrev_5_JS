@@ -1,6 +1,6 @@
 class Timer {
 
-  constructer(tempTotalTime) {
+  constructor(tempTotalTime) {
     this.totalTime = tempTotalTime;
     this.startTime = 0;
   }
