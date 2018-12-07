@@ -91,6 +91,7 @@ class Grid {
          --A cell is born if it has exaclty 3 neighbors (and isn't already alive)
          */
          if(neighbors < 2 || neighbors > 3) {
+           
            this.nextWorld[i][j].turnOff();
          } else if(neighbors === 3 || this.world[i][j].isOn()) {
            this.nextWorld[i][j].turnOff();

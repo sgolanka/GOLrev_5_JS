@@ -70,6 +70,7 @@ function draw() {
     universe.display();
     fill(255, 75);
     text("Generation " + numberOfGenerations, width * 3 / 4, height * 0.9);
+    console.log(universe.nextWorld)
   }
 
   if(start) {
