@@ -18,7 +18,10 @@ class Grid {
       }
     }
 
-    this.nextWorld = new Array(new Array(this.world.length), new Array(this.world[0].length)); // next generation state--just needs to keep track of value of "on"
+    this.nextWorld = new Array(this.world.length)); // next generation state--just needs to keep track of value of "on"
+    for(var i = 0; i < this.nextWorld.length; i++) {
+      this.nextWorld[i] = new Array(this.world[i].length)
+    }
 
     // nextworld initialized like world; fewer details necessary
     for(var i = 0; i < this.nextWorld.length; i++) {
@@ -66,7 +69,6 @@ class Grid {
 
    go() {
      this.setNeighbors(); // aka "update nextWorld()"
-
      this.updateWorld();
    }
 
@@ -92,6 +94,7 @@ class Grid {
          --A cell is born if it has exaclty 3 neighbors (and isn't already alive)
          */
          if(neighbors < 2 || neighbors > 3) {
+
            this.nextWorld[i][j].turnOff();
          } else if(neighbors === 3 || this.world[i][j].isOn()) {
            this.nextWorld[i][j].turnOff();
@@ -165,7 +168,7 @@ class Grid {
 
      var colCount = worldTable.getColumnCount();
      var rowCount = worldTable.getRowCount();
-     
+
      for(var a = 0; a < rowCount; a++) { // go through rows
        for(var b = 0; b < colCount; b++) { // go through columns
          if(worldTable.getInt(a, b) == 1) {

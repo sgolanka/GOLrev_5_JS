@@ -63,20 +63,25 @@ function setup() {
 
 function draw() {
   background(0);
+
   if(preStart) {
     displayInstructions();
   } else {
     universe.display();
     fill(255, 75);
     text("Generation " + numberOfGenerations, width * 3 / 4, height * 0.9);
+    console.log(universe.nextWorld)
   }
 
   if(start) {
+    console.log("Program STARTED!!!");
     if(timer.isFinished()) {
       universe.go();
       timer.setTime(timeBetweenGenerations);
       timer.start();
       numberOfGenerations++;
+    } else {
+      console.log("I THINK IT'S THE TIMER!");
     }
   }
 }
@@ -89,7 +94,6 @@ function displayInstructions() {
     textSize(height / 35);
     fill(255, 255, 0, 200);
     text(instructions, 50, 50, width - 50, height - 50);
-
 }
 
 function mousePressed() {
@@ -116,6 +120,7 @@ function mouseDragged() {
 function keyPressed() {
   if (key == 's' || key == 'S') {
     start = !start;
+    console.log("Finished modifying start, program should run now.")
   } else if (key == 'x' || key == 'X') {
     universe.setRandomColor();
   } else if (key == 'y' || key == 'Y') {
