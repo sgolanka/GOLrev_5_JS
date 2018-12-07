@@ -18,7 +18,7 @@ class Grid {
       }
     }
 
-    this.nextWorld = new Array(this.world.length)); // next generation state--just needs to keep track of value of "on"
+    this.nextWorld = new Array(this.world.length); // next generation state--just needs to keep track of value of "on"
     for(var i = 0; i < this.nextWorld.length; i++) {
       this.nextWorld[i] = new Array(this.world[i].length)
     }
@@ -97,7 +97,7 @@ class Grid {
 
            this.nextWorld[i][j].turnOff();
          } else if(neighbors === 3 || this.world[i][j].isOn()) {
-           this.nextWorld[i][j].turnOff();
+           this.nextWorld[i][j].turnOn();
          }
        }
      }

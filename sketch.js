@@ -21,6 +21,7 @@
  Number Keys (1-9): Load specific starting world
 
  Stan Golanka (2018) w/ Neighbor Detection by Dan Rencricca
+ Online Version by Ozan Mirza
  *Is there any other kind?
  *************************************************************************
  *************************************************************************
