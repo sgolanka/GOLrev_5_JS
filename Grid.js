@@ -18,7 +18,10 @@ class Grid {
       }
     }
 
-    this.nextWorld = new Array(new Array(this.world.length), new Array(this.world[0].length)); // next generation state--just needs to keep track of value of "on"
+    this.nextWorld = new Array(this.world.length)); // next generation state--just needs to keep track of value of "on"
+    for(var i = 0; i < this.nextWorld.length; i++) {
+      this.nextWorld[i] = new Array(this.world[i].length)
+    }
 
     // nextworld initialized like world; fewer details necessary
     for(var i = 0; i < this.nextWorld.length; i++) {
@@ -91,7 +94,7 @@ class Grid {
          --A cell is born if it has exaclty 3 neighbors (and isn't already alive)
          */
          if(neighbors < 2 || neighbors > 3) {
-           
+
            this.nextWorld[i][j].turnOff();
          } else if(neighbors === 3 || this.world[i][j].isOn()) {
            this.nextWorld[i][j].turnOff();
