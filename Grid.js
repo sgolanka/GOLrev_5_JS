@@ -158,13 +158,7 @@ class Grid {
      // table assumes 140 x 140 world
      var whichWorld = w;
      var worldTable = new p5.Table();
-     if(whichWorld == 0) {
-        worldTable = loadTable("data/tableGOL.csv");
-     } else {
-       var nameOfTable = "data/tableGOL" + whichWorld + ".csv";
-       console.log(nameOfTable);
-       worldTable = loadTable(nameOfTable);
-     }
+     worldTable = worlds[whichWorld];
 
      var colCount = worldTable.getColumnCount();
      var rowCount = worldTable.getRowCount();
