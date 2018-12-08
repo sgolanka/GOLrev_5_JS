@@ -41,9 +41,9 @@
 
 function preload() {
   instText = loadStrings("data/golInst.txt");
-  worlds.append(loadTable("data/tableGOL.csv", "csv"));
+  worlds.push(loadTable("data/tableGOL.csv", "csv"));
   for(var i = 0; i < 5; i++) {
-    worlds.append(loadTable("data/tableGOL" + (i + 1) + ".csv", "csv"));
+    worlds.push(loadTable("data/tableGOL" + (i + 1) + ".csv", "csv"));
   }
 }
 
