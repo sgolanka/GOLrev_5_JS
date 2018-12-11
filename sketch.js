@@ -120,7 +120,7 @@ function mouseDragged() {
 
   var dx = mouseX - pmouseX;
   var dy = mouseY - pmouseY;
-  universe.updateLoc(dx, dy);
+  universe.updatePosition(dx, dy);
 }
 
 function keyPressed() {
