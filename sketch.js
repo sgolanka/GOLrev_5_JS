@@ -117,6 +117,10 @@ function mouseDragged() {
     universe.selectCell(mouseX, mouseY);
     smoothener.start();
   }
+
+  var dx = mouseX - pmouseX;
+  var dy = mouseY - pmouseY;
+  universe.updateLoc(dx, dy);
 }
 
 function keyPressed() {
