@@ -175,4 +175,12 @@ class Grid {
      this.updateWorld();
      this.setNeighbors();
    }
+
+   updatePosition(dx, dy) {
+     for(var i = 0; i < this.col; i++) {
+       for(var j = 0; j < this.row; j++) {
+         this.world[i][j].updateLoc(Math.floor(dx), Math.floor(dy));
+       }
+     }
+   }
 }
