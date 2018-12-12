@@ -15,7 +15,7 @@
       L: Load Saved World                   Y: Make Color Yellow
       X: Choose Random Color           M: Show this menu
       <- (Left Arrow): Slow Down       -> (Right Arrow): Speed Up
-            Number Keys (1-9): Load specific starting world
+            Number Keys (1-5): Load specific starting world
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
       Stan Golanka (2018) w/ Neighbor Detection by Dan Rencricca

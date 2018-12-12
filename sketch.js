@@ -37,9 +37,14 @@
  var start, preStart;
  var smoothener;
  var instText;
+ var worlds = []
 
 function preload() {
   instText = loadStrings("data/golInst.txt");
+  worlds.push(loadTable("data/tableGOL.csv", "csv"));
+  for(var i = 0; i < 5; i++) {
+    worlds.push(loadTable("data/tableGOL" + (i + 1) + ".csv", "csv"));
+  }
 }
 
 function setup() {
@@ -71,18 +76,14 @@ function draw() {
     universe.display();
     fill(255, 75);
     text("Generation " + numberOfGenerations, width * 3 / 4, height * 0.9);
-    console.log(universe.nextWorld)
   }
 
   if(start) {
-    console.log("Program STARTED!!!");
     if(timer.isFinished()) {
       universe.go();
       timer.setTime(timeBetweenGenerations);
       timer.start();
       numberOfGenerations++;
-    } else {
-      console.log("I THINK IT'S THE TIMER!");
     }
   }
 }
@@ -116,12 +117,15 @@ function mouseDragged() {
     universe.selectCell(mouseX, mouseY);
     smoothener.start();
   }
+
+  var dx = mouseX - pmouseX;
+  var dy = mouseY - pmouseY;
+  universe.updatePosition(dx, dy);
 }
 
 function keyPressed() {
   if (key == 's' || key == 'S') {
     start = !start;
-    console.log("Finished modifying start, program should run now.")
   } else if (key == 'x' || key == 'X') {
     universe.setRandomColor();
   } else if (key == 'y' || key == 'Y') {

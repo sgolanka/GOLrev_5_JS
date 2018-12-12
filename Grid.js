@@ -158,20 +158,14 @@ class Grid {
      // table assumes 140 x 140 world
      var whichWorld = w;
      var worldTable = new p5.Table();
-     if(whichWorld == 0) {
-        worldTable = loadTable("data/tableGOL.csv");
-     } else {
-       var nameOfTable = "data/tableGOL" + whichWorld + ".csv";
-       console.log(nameOfTable);
-       worldTable = loadTable(nameOfTable);
-     }
+     worldTable = worlds[whichWorld];
 
      var colCount = worldTable.getColumnCount();
      var rowCount = worldTable.getRowCount();
 
      for(var a = 0; a < rowCount; a++) { // go through rows
        for(var b = 0; b < colCount; b++) { // go through columns
-         if(worldTable.getInt(a, b) == 1) {
+         if(worldTable.getNum(a, b) == 1) {
            this.nextWorld[b][a].turnOn(); // somewhere I flipped rows and columns
          } else {
            this.nextWorld[b][a].turnOff();
@@ -180,5 +174,13 @@ class Grid {
      }
      this.updateWorld();
      this.setNeighbors();
+   }
+
+   updatePosition(dx, dy) {
+     for(var i = 0; i < this.col; i++) {
+       for(var j = 0; j < this.row; j++) {
+         this.world[i][j].updateLoc(Math.floor(dx), Math.floor(dy));
+       }
+     }
    }
 }

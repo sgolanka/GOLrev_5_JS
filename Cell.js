@@ -29,6 +29,11 @@ class Cell {
     this.cellY = y;
   }
 
+  updateLoc(dx, dy) {
+    this.cellX += dx;
+    this.cellY += dy;
+  }
+
   turnOn() {
     this.on = true;
   }
